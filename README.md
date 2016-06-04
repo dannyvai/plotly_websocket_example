@@ -1,5 +1,5 @@
-# ploty_websocket_example
-Use Ploty(js) and Websockets to animate graphs  and show realtime data
+# plotly_websocket_example
+Use Plotly(js) and Websockets to animate graphs  and show realtime data
 
 ![example](http://i.imgur.com/ECjWgAh.gif)
 
