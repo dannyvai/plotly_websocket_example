@@ -1,6 +1,8 @@
 # ploty_websocket_example
 Use Ploty(js) and Websockets to animate graphs  and show realtime data
 
+![example](http://i.imgur.com/ECjWgAh.gif)
+
 I used [pywebsocket](https://github.com/google/pywebsocket) in order to test this
 
 I've created a handler named send_graph which sends a moving sine-wave graph to the websocket
