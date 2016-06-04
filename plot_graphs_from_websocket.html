@@ -1,0 +1,46 @@
+<html>
+
+<!-- Plotly.js -->
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+<script>
+    ws = new WebSocket("ws://localhost:9998/send_graph")
+    var request_data_interval
+    ws.onopen = function()
+    {
+        // Web Socket is connected, send data using send()
+        ws.send("Message to send");
+
+        request_data_interval = window.setInterval(requestData, 50);
+
+    };
+		
+    ws.onmessage = function (evt) 
+    { 
+        var received_msg = evt.data;
+
+        data = JSON.parse(evt.data);
+        var my_plot = {
+            x: data.x, 
+            y: data.y, 
+            type: 'scatter',
+        };
+        Plotly.newPlot('sine-graph', [my_plot]);
+    };
+		
+    ws.onclose = function()
+    { 
+      // websocket is closed.
+      window.clearInterval(request_data_interval)
+    };
+    
+    function requestData()
+    {
+        ws.send("get-data");
+    }
+</script>
+<body>
+</body>
+<div id="sine-graph" style="width: 400px; height: 400px;">
+
+</html>
