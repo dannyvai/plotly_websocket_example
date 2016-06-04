@@ -9,9 +9,10 @@ In order to make it work you need to install the pywebsocket
 Then you copy the send_graph_wsh.py file into pywebsocket/example/
 
 Usage : 
-> cd pywebsocket/mod_pywebsocket
-> python standalone.py -p 9998 -w ../example/
-
+```
+cd pywebsocket/mod_pywebsocket
+python standalone.py -p 9998 -w ../example/
+```
 Then open the `plot_graphs_from_websocket.html` in your browser
 
 
